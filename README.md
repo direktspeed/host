@@ -33,5 +33,7 @@ a minimal fs to run on. needs /tasks/tasks.js and tasks.js would need to export 
 or a readablestream for a one off task
 
 ```
-awesomeos-msg path or pwd gets used
+awesomeos-run path or pwd gets used
 ```
+
+directly returns the output of the execution 
