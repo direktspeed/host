@@ -7,13 +7,11 @@ const peers = [];
 const RTCPeerConnection = () => {
       const peer = peers[peers.push({})-1];
       peer.ondatachannel = async (channel) => {
-            const [_replServer,{ readable }] = tryConnect(path); 
-            const input = writable.getWriter();
+            const connection = tryConnect(path); 
+            const stream = Duplex.toWeb(connection.input) 
+            const input = stream.writable.getWriter();
             channel.onmessage = (msg) => input.write(msg); // replServer.input.push bad idea none generiic?
-            
-            
-            
-            for await (const output of readable) {
+            for await (const output of stream.readable) {
                   channel.postMessage(output);
             }            
       }
