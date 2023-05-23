@@ -39,9 +39,9 @@ const resetSocket = (path) => () => fs.unlink(`${path}.sock`)).then(()=>{
       return Duplex.toWeb(net.createConnection({path}));
 })
 
-const tryConnect = (path) => () => [replListen(net.createConnection({path}))].map(async (connection) => (
-await Duplex.toWeb(connection.output).readable.getReader().read()
-).value.startsWith('Node.js') && Duplex.toWeb(connection.output)).find(connection=>connection) || resetSocket(path);
+const tryConnect = (path) => () => [net.createConnection({path})].map(async (connection) => (
+await Duplex.toWeb(connection).readable.getReader().read()
+).value.startsWith('Node.js') && Duplex.toWeb(connection)).find(connection=>connection) || resetSocket(path);
 
 const listen = async (path) => 
 await fs.readFile(`${path}.sock`).then(
