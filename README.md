@@ -12,18 +12,15 @@ awesomeos-host path or pwd gets used
 <pre>
 creates /bin equal to linux bin holds executeable tasks
 creates /dev/ equal to linux dev holds input output for devices.
-creates /dev/input you will write to this file
+creates /dev/stdin,stderr,stdout links to tasks/self you will write to this file
 creates /run equal to linux run holds taskId mappings
 creates /run.socket offers a REPL to the current running host equal to a shell session.
-creates /tasks equal to linux proc
-creates /var/log/output you will read this file
-
+creates /tasks equal to linux proc all files in this directory represent running tasks. including
+./self/2 stderr, 1 stdout, 0 stdin, ./init.js  equal to linux cloudinit but written in ECMAScript is equal to the package or dockerfile.
 </pre>
 
 if you execute it and it is already running it will return a new peerconnection additional to the inital one so that you can connect to 
 the hosts and tasks remote like you would do with ssh as a whole or indipendent is equal to a linux shell.
-
-
 
 ```
 awesomeos-shell path or pwd gets used
