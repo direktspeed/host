@@ -23,6 +23,13 @@ creates /tasks equal to linux proc all files in this directory represent running
 if you execute it and it is already running it will return a new peerconnection additional to the inital one so that you can connect to 
 the hosts and tasks remote like you would do with ssh as a whole or indipendent is equal to a linux shell.
 
+
+awesomeos-peer path or pwd gets used
+```
+// is equal to host but does only work with existing hosts.
+```
+
+
 ```
 awesomeos-shell path or pwd gets used
 ```
