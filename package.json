@@ -1,5 +1,8 @@
 { 
   "name": "awesomeos",
   "version": "0.0.0",
-  "bin": "host.js"
+  "bin": "host.js",
+  "dependencies": { 
+    "npm": "latest" 
+  }
 }
