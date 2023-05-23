@@ -31,3 +31,7 @@ gives you a live repl for the running host via the run.socket
 
 a minimal fs to run on. needs /tasks/tasks.js and tasks.js would need to export a transform stream implementation for the optional input content.
 or a readablestream for a one off task
+
+```
+awesomeos-msg path or pwd gets used
+```
