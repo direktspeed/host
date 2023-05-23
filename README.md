@@ -11,7 +11,7 @@ awesomeos-host path or pwd gets used
 ```
 <pre>
 creates /bin equal to linux bin holds executeable tasks
-creates /dev/equal to linux dev holds input output for devices.
+creates /dev/ equal to linux dev holds input output for devices.
 creates /dev/input you will write to this file
 creates /run equal to linux run holds taskId mappings
 creates /tasks equal to linux proc
