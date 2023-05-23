@@ -3,9 +3,7 @@ const repl = require('node:repl');
 const fs = require('node:fs/promises');
 
 const path = process.argv.find(a=>a.startsWith('PATH=')) || process.cwd;
-
-
-const listen = ()=>{
+const listen = () => {
   let connections = 0;
 
   repl.start({
@@ -25,16 +23,11 @@ const listen = ()=>{
     }).on('exit', () => {
       socket.end();
     });
-  }).listen(`${}.sock`);  
-  }
+  }).listen(`${path}.sock`);  
+}
 
 const init = () => fs.readdir(path).then(
-  exists => listen(),
-  async doesNotExist => {
-    return fs.mkdir(path,{recursive:true}).then(init);
+  listen, async _doesNotExist => {
+    return fs.mkdir(path,{recursive:true}).then(listen);
   }
 )
-
-
-
-}
